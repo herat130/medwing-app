@@ -1,20 +1,22 @@
-## git Repo
-- https://github.com/herat130/medwing
-- https://github.com/herat130/medwing-server
-
-### gitLab for CI / CD
-- https://gitlab.com/herat130/medwing/
-- https://gitlab.com/herat130/medwing-server
-
 ### Bootstrap the app
 - cd frontend
 - npm i
 - cd ../server/function
 - npm i
 - npm start
+
+## local url
 - frontend [http://localhost:3000]
 - api [http://localhost:5000/medwing-server/us-central1/app]
 - [express app is based on google firebase functions]
+
+### git Repo
+- https://github.com/herat130/medwing
+- https://github.com/herat130/medwing-server
+
+### gitLab for CI / CD
+- https://gitlab.com/herat130/medwing/
+- https://gitlab.com/herat130/medwing-server
 
 ## test 
 - cd frontend
@@ -33,19 +35,20 @@
 - delete new place
 
 ### Production App Details:
-- Frontend:
+#### Frontend:
 - https://medwing-front.firebaseapp.com/findplaces
 
-- API:
+#### API:
 - https://us-central1-medwing-server.cloudfunctions.net/app/
 
-### Frontend Tech stack
+### Tech stack
 - React [create-react-app]
 - Redux
 - Sass
 - thunk
+- jest
+- enzyme
+- express
 
 ## pending work
-- code cleanup  / review
 - mobile extra padding at bottom
-- convrt api to put and delete
