@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "medwing-server"
+  },
+  "rewrite":[{
+    "source":"**",
+    "function":"app"
+  }]
+}
