@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 export const fetchWrapper = (url, method = 'GET', data) => {
   const fetchConfig = {
     method,
