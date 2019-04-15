@@ -1,3 +1,13 @@
+### App Tech stack
+- firebase
+- React [create-react-app][ES-lint]
+- Redux
+- Sass
+- thunk
+- jest
+- enzyme
+- express
+
 ### Bootstrap the app
 - cd frontend
 - npm i
@@ -5,26 +15,33 @@
 - npm i
 - npm start
 
-## local url
+### config management
+- frontend  : frontend/.env.development and .env.production file manages API path and google api key
+- backend : server/functions/.env file manages API google key
+
+### local url
 - frontend [http://localhost:3000]
 - api [http://localhost:5000/medwing-server/us-central1/app]
 - [express app is based on google firebase functions]
 
-### git Repo
-- https://github.com/herat130/medwing
-- https://github.com/herat130/medwing-server
+## Production App Details:
+- to host an app i have created 2 separate repository , different ci/cd for frontend and backend as mentioned below.
+- while submitting an app i have combine both frontend and backend togather for easy in bootstrap the app
 
-### gitLab for CI / CD
-- https://gitlab.com/herat130/medwing/
-- https://gitlab.com/herat130/medwing-server
+#### Frontend:
+- https://medwing-front.firebaseapp.com/findplaces
+
+#### API:
+- https://us-central1-medwing-server.cloudfunctions.net/app/
 
 ## test 
 - cd frontend
 - npm run test
 
 ### Frontend Feature
-- .env.devlopment and .env.production files for setting configuration related to app on dev and production phase
+- config management
 - prettier enables as pre commit hook
+- frontend test
 - firebase hosting with ci / cd pipeline in gitlab
 - display toastr messages on success and faliure.
 
@@ -33,22 +50,6 @@
 - add new place
 - update new place
 - delete new place
-
-### Production App Details:
-#### Frontend:
-- https://medwing-front.firebaseapp.com/findplaces
-
-#### API:
-- https://us-central1-medwing-server.cloudfunctions.net/app/
-
-### Tech stack
-- React [create-react-app]
-- Redux
-- Sass
-- thunk
-- jest
-- enzyme
-- express
 
 ## pending work
 - mobile extra padding at bottom

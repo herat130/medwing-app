@@ -13,7 +13,7 @@ const app = express();
 app.use(cors({origin:true}));
 app.use(compression());
 app.use(helmet());
-app.use(timeout('100s'));
+app.use(timeout('10s'));
 app.use(haltOnTimedout);
 
 function haltOnTimedout(req, res, next) {

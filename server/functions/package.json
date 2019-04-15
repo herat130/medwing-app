@@ -2,13 +2,10 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
-    "serve": "firebase serve --only functions",
+    "serve": "node_modules/.bin/firebase serve --only functions",
     "client": "cd ../../frontend && npm run start",
     "test": "cd ../../frontend && npm run test",
-    "shell": "firebase functions:shell",
-    "startShell": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
+    "deploy": "node_modules/.bin/firebase deploy --only functions",
     "start": "concurrently --kill-others-on-fail \"npm run serve\" \"npm run client\""
   },
   "dependencies": {
@@ -28,7 +25,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "firebase-tools": "^6.6.0"
   },
   "private": true
 }
