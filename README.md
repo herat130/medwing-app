@@ -40,10 +40,13 @@
 
 ### Frontend Feature
 - config management
+- polyfill based frontend app
 - prettier enables as pre commit hook
-- frontend test
+- frontend test cases
 - firebase hosting with ci / cd pipeline in gitlab
 - display toastr messages on success and faliure.
+- add, edit ,delete , get address functionality.
+- responsive app.
 
 ### API feature
 - fetch all place
