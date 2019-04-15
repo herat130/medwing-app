@@ -2,7 +2,7 @@ var routes = require('express').Router();
 var axios = require('axios');
 const uuidv1 = require('uuid/v1');
 
-var markers = [{id:'1212',place:'berlin',lat:20.1212,lng:21.0020}];
+var markers = [];
 var GEOLOCATION_API = 'https://maps.googleapis.com/maps/api/geocode/json?';
 
 routes.get('/test', (req, rsp) => {
@@ -10,14 +10,13 @@ routes.get('/test', (req, rsp) => {
 })
 
 function duplicate(data) {
-  var searchPlace = data.address_components[0].long_name;
   var searchLat = data.geometry.location.lat;
   var searchLng = data.geometry.location.lng;
-  return markers.some(({ place, lat, lng }) => place === searchPlace && lat === searchLat && lng === searchLng);
+  return (markers || []).some(({ lat, lng }) => lat === searchLat && lng === searchLng);
 }
 
 function idExists(id) {
-  return markers.some(marker => marker.id === id);
+  return (markers || []).some(marker => marker.id === id);
 }
 
 function fetchLocationDetails(address, id = null) {
@@ -29,7 +28,7 @@ function fetchLocationDetails(address, id = null) {
     var status = v.data.status;
     if (status === 'OK') {
       if (!duplicate(v.data.results[0])) {
-        var searchPlace = v.data.results[0].address_components[0].long_name;
+        var searchPlace = address; // v.data.results[0].address_components[0].long_name
         var searchLat = v.data.results[0].geometry.location.lat;
         var searchLng = v.data.results[0].geometry.location.lng;
         if (id) {
