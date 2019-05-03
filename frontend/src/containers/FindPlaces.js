@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AddPlace from '../components/AddPlace';
-import MyMaps from '../components/MyMaps';
+// import MyMaps from '../components/MyMaps';
 import '../assets/styles/findplaces.scss';
 import {
   addAddress,
@@ -10,12 +10,12 @@ import {
   getAllAddress,
   fetchStart,
 } from '../actions/addMap.action';
-
+const MyMaps = React.lazy(() => import('../components/MyMaps'));
 /**
  * below component is wrapper for map and search components
  */
 export class FindPlaces extends React.Component {
-  componentDidMount() {    
+  componentDidMount() {
     /** fetch all the places available on server */
     this.props.getAllAddress();
   }
@@ -37,7 +37,9 @@ export class FindPlaces extends React.Component {
     return (
       <div className="row findplaces">
         <div className="column-6 map">
-          <MyMaps allPlaces={allPlaces} />
+          <React.Suspense fallback={<div> Loading ...</div>}>
+            <MyMaps allPlaces={allPlaces} />
+          </React.Suspense>
         </div>
         <div className="column-6 details">
           <AddPlace
